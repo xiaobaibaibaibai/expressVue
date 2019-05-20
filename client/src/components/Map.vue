@@ -3,17 +3,23 @@
 </template>
 
 <!-- Google map in background -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAp4rRcadgcMU4H6FiCrpVNCeM5tHD5yzc"></script>
+
 <script>
+import syrMap from '../syrMap'
+
 export default {
     name: 'GoogleMap',
     data() {
-        let map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 13,
-            center: {lat: 43.0481221, lng: -76.14742439999999}
-        });
+        // let map = new google.maps.Map(document.getElementById('map'), {
+        //     zoom: 13,
+        //     center: {lat: 43.0481221, lng: -76.14742439999999}
+        // });
         // new google.maps.Marker({position: {lat: 43.0481221, lng: -76.14742439999999}, map: map});
-        this.$emit('msgFunc', map);
+        // this.$emit('msgFunc', map);
+
+
+        let mapGoogle = new syrMap('map',[],[],[]);
+
         return {
             message: 'Here is Map.vue',
         };

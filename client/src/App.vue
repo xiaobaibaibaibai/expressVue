@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <google-map />
+    <Map/>
     <component :is="currentMenu" :right="side === 'right' ? true: false">
       <div class='uavControlBtn'>
         <button v-on:click="startFly" class='start'>start</button>
@@ -16,7 +16,8 @@
 // import PostComponent from './components/PostComponent.vue';
 import slide from './components/slide';
 import Menu from './components/Menu';
-import GoogleMap from "./components/GoogleMap";
+// import GoogleMap from "./components/GoogleMap";
+import Map from "./components/Map.vue"
 
 export default {
   name: 'app',
@@ -30,7 +31,8 @@ export default {
     // PostComponent,
     slide,
     Menu,
-    GoogleMap,
+    // GoogleMap,
+    Map,
   },
   methods: {
     startFly() {

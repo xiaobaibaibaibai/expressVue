@@ -3,12 +3,12 @@ import App from './App.vue'
 import './assets/styles.less'
 import * as VueGoogleMaps from "vue2-google-maps";
 
-Vue.use(VueGoogleMaps, {
-  load: {
-    key: "AIzaSyAp4rRcadgcMU4H6FiCrpVNCeM5tHD5yzc",
-    libraries: "places" // necessary for places input
-  }
-});
+// Vue.use(VueGoogleMaps, {
+//   load: {
+//     key: "AIzaSyAp4rRcadgcMU4H6FiCrpVNCeM5tHD5yzc",
+//     libraries: "places" // necessary for places input
+//   }
+// });
 
 Vue.config.productionTip = false
 
