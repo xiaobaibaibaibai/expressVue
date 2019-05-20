@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
 import './assets/styles.less'
-import * as VueGoogleMaps from "vue2-google-maps";
 
 // Vue.use(VueGoogleMaps, {
 //   load: {
