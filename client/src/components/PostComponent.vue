@@ -38,7 +38,7 @@ export default {
   async created () {
     try {
       this.posts = await PostService.getPosts();
-      // console.log(this.posts)
+      console.log(this.posts)
     } catch(err) {
       this.error = err.message;
     }

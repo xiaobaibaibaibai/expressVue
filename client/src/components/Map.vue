@@ -18,21 +18,24 @@ export default {
         // new google.maps.Marker({position: {lat: 43.0481221, lng: -76.14742439999999}, map: map});
         // this.$emit('msgFunc', map);
 
-
-        let mapGoogle = new syrMap('map',[],[],[]);
-
         return {
             message: 'Here is Map.vue',
         };
     },
     async created () {
         try {
-            this.posts = await dataReceiver.getData();
-            console.log(this.posts)
+            this.startData = await dataReceiver.getStartData();
+            this.endData = await dataReceiver.getEndData();
+            // this.uavData = await dataReceiver.getUAVData();
+            // console.log(this.uavData)
+            console.log(this.startData)
+            console.log(this.endData)
+            let mapGoogle = new syrMap('map',[],this.startData,this.endData);
         } catch(err) {
             this.error = err.message;
         }
     },
+    
 };
 </script>
 
