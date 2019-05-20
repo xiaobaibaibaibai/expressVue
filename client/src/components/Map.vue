@@ -6,6 +6,7 @@
 
 <script>
 import syrMap from '../syrMap'
+import dataReceiver from '../dataReceiver'
 
 export default {
     name: 'GoogleMap',
@@ -23,6 +24,14 @@ export default {
         return {
             message: 'Here is Map.vue',
         };
+    },
+    async created () {
+        try {
+            this.posts = await dataReceiver.getData();
+            console.log(this.posts)
+        } catch(err) {
+            this.error = err.message;
+        }
     },
 };
 </script>
