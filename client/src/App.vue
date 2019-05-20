@@ -1,22 +1,52 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <PostComponent />
+    <google-map />
+    <component :is="currentMenu" :right="side === 'right' ? true: false">
+      <div class='uavControlBtn'>
+        <button v-on:click="startFly" class='start'>start</button>
+        <button v-on:click="pauseFly" class='pause'>pause</button>
+        <button v-on:click="resumeFly" class='resume'>resume</button>
+      </div>
+    </component>
+    <!-- <PostComponent/> -->
   </div>
 </template>
 
 <script>
-import PostComponent from './components/PostComponent.vue'
+// import PostComponent from './components/PostComponent.vue';
+import slide from './components/slide';
+import Menu from './components/Menu';
+import GoogleMap from "./components/GoogleMap";
 
 export default {
   name: 'app',
+  data() {
+    return {
+      side: 'left',
+      currentMenu: 'slide'
+    };
+  },
   components: {
-    PostComponent
-  }
+    // PostComponent,
+    slide,
+    Menu,
+    GoogleMap,
+  },
+  methods: {
+    startFly() {
+        console.log('startFlying')    
+    },
+    pauseFly() {
+        console.log('pauseFlying')    
+    },
+    resumeFly() {
+        console.log('resumeFlying')    
+    },
+  },
 }
 </script>
 
-<style>
+<style lang="less">
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -25,4 +55,5 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
 </style>
